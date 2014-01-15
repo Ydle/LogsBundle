@@ -1,0 +1,8 @@
+parameters:
+  ydle.logs.manager.class: Ydle\LogsBundle\Manager\LogsManager
+
+services:
+  ydle.logger:
+    class: %ydle.logs.manager.class%
+    arguments: 
+      entityManager: "@doctrine.orm.entity_manager"
