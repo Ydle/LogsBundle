@@ -34,10 +34,11 @@ class LogsManager extends BaseManager
     * @param string $text
     * @return Logs
     */
-    public function log($type, $text)
+    public function log($type, $text, $source = Logs::SOURCE_HUB)
     {
         $log = new Logs();
         $log->setType($type);
+        $log->setSource($source);
         $log->setContent($text);
         
         $this->em->persist($log);

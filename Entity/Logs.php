@@ -14,6 +14,10 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Logs
 {
+    const SOURCE_NODES = 'nodes';
+    const SOURCE_MASTER = 'master';
+    const SOURCE_HUB = 'hub';
+    
     /**
      * @var integer
      *
@@ -30,6 +34,14 @@ class Logs
      * @Assert\NotBlank()
      */
     private $type;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="source", type="string", length=255)
+     * @Assert\NotBlank()
+     */
+    private $source;
 
     /**
      * @var string
@@ -154,5 +166,28 @@ class Logs
     public function getUpdatedAt()
     {
         return $this->updated_at;
+    }
+
+    /**
+     * Set source
+     *
+     * @param string $source
+     * @return Room
+     */
+    public function setSource($source)
+    {
+        $this->source = $source;
+    
+        return $this;
+    }
+
+    /**
+     * Get source
+     *
+     * @return string 
+     */
+    public function getSource()
+    {
+        return $this->source;
     }
 }
