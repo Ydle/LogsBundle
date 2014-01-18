@@ -2,5 +2,19 @@
 
 {% block title "Ydle - Logs" %}
 
-{% block content %}Logs
+{% block submenu %}
+  {{ include('YdleIhmBundle:Config:submenu.html.twig', {
+    'current': current
+    })
+  }}
+{% endblock %}
+{% block content %}
+    <!-- Example row of columns -->
+    <div class="row">
+        <div style="width: 760px; margin-right: 20px;" class="col-lg-8 with-border">
+            <h2>Logs</h2>
+            <table id="roomtypes">
+            </table>
+        </div>      
+    </div>      
 {% endblock %}
