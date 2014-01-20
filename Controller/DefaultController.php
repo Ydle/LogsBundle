@@ -17,7 +17,16 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $query = $this->get('ydle.logger')->createViewLogQuery();
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $this->get('request')->query->get('page', 1)/*page number*/,
+            10/*limit per page*/
+        );
         return $this->render('YdleLogsBundle:Default:index.html.twig', array(
+            'pagination' => $pagination
         ));
     }
 }

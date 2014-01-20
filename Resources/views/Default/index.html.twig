@@ -1,6 +1,6 @@
 {% extends "YdleIhmBundle::layout.html.twig" %}
 
-{% block title "Ydle - Logs" %}
+{% block title "Ydle - Configuration" %}
 
 {% block submenu %}
   {{ include('YdleIhmBundle:Config:submenu.html.twig', {
@@ -14,6 +14,41 @@
         <div style="width: 760px; margin-right: 20px;" class="col-lg-8 with-border">
             <h2>Logs</h2>
             <table id="roomtypes">
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Source</th>
+                <th>Message</th>
+            </tr>
+            </thead>
+            {% if pagination.getTotalItemCount %}
+            <tbody>
+            {% for log in pagination %}
+            <tr {% if loop.index is odd %}class="color"{% endif %}>
+                <td>{{ log.date | date("d/m/Y H:i:s") }}</td>
+                <td>{{ log.type }}</td>
+                <td>{{ log.source }}</td>
+                <td>{{ log.content }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="4">                
+                {# display navigation #}
+                <div class="navigation">
+                    {{ knp_pagination_render(pagination) }}
+                </div>
+                </td>
+            </tfoot>
+            {% else %}
+            <tbody>
+            <tr>
+                <td colspan="4">Aucun log enregistré</td>
+            </tr>
+            </tbody>
+            {% endif %}
             </table>
         </div>      
     </div>      

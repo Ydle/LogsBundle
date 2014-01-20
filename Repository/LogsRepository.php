@@ -12,4 +12,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class LogsRepository extends EntityRepository
 {
+    
+    public function createViewLogQuery()
+    {
+        $query = $this->createQueryBuilder('l')
+                    ->addOrderBy('l.created_at', "DESC")  
+        ;
+        return $query;
+    }
 }
