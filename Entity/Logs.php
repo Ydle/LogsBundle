@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Logs
  *
  * @ORM\Table(name="logs")
- * @ORM\Entity(repositoryClass="Ydle\RoomBundle\Repository\LogsRepository")
+ * @ORM\Entity(repositoryClass="Ydle\LogsBundle\Repository\LogsRepository")
  */
 class Logs
 {
@@ -80,7 +80,7 @@ class Logs
      * Set type
      *
      * @param string $type
-     * @return Room
+     * @return Logs
      */
     public function setType($type)
     {
@@ -103,7 +103,7 @@ class Logs
      * Set content
      *
      * @param string $content
-     * @return Room
+     * @return Logs
      */
     public function setContent($content)
     {
@@ -172,7 +172,7 @@ class Logs
      * Set source
      *
      * @param string $source
-     * @return Room
+     * @return Logs
      */
     public function setSource($source)
     {

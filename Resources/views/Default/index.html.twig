@@ -4,14 +4,14 @@
 
 {% block submenu %}
   {{ include('YdleIhmBundle:Config:submenu.html.twig', {
-    'current': current
+    'current': ''
     })
   }}
 {% endblock %}
 {% block content %}
     <!-- Example row of columns -->
     <div class="row">
-        <div style="width: 760px; margin-right: 20px;" class="col-lg-8 with-border">
+        <div class="col-lg-8 with-border">
             <h2>Logs</h2>
             <table id="roomtypes">
             <thead>
@@ -26,7 +26,7 @@
             <tbody>
             {% for log in pagination %}
             <tr {% if loop.index is odd %}class="color"{% endif %}>
-                <td>{{ log.date | date("d/m/Y H:i:s") }}</td>
+                <td>{{ log.createdAt | date("d/m/Y H:i:s") }}</td>
                 <td>{{ log.type }}</td>
                 <td>{{ log.source }}</td>
                 <td>{{ log.content }}</td>
@@ -45,7 +45,7 @@
             {% else %}
             <tbody>
             <tr>
-                <td colspan="4">Aucun log enregistré</td>
+                <td colspan="4">Aucun log enregistrï¿½</td>
             </tr>
             </tbody>
             {% endif %}
