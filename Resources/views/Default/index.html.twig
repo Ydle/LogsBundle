@@ -50,6 +50,16 @@
             </tbody>
             {% endif %}
             </table>
-        </div>      
+        </div>
+        <div class="col-lg-4 content panel panel-default">
+          <div class="panel-heading">
+          <h3 class="panel-title">Vos logs</h3>
+          </div>
+          <div class="panel-body">
+              <a href="{{ path('resetlogs') }}" onclick="return confirm('Êtes vous sur de vouloir supprimer tous vos logs ?');">Vider les logs</a>
+          </div>
+          <div class="panel-footer">
+          </div>
+        </div> 
     </div>      
 {% endblock %}

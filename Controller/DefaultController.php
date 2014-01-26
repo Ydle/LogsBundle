@@ -29,4 +29,10 @@ class DefaultController extends Controller
             'pagination' => $pagination
         ));
     }
+    
+    public function resetAction(Request $request)
+    {
+        $this->get('session')->getFlashBag()->add('notice', $message);
+        return $this->redirect($this->generateUrl('logs'));
+    }
 }

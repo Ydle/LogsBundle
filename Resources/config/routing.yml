@@ -4,3 +4,7 @@
 logs:
     pattern:  /logs
     defaults: { _controller: YdleLogsBundle:Default:index }
+ 
+resetlogs:
+    patterin: /logs/reset
+    defaults: { _controller: YdleLogsBundle:Default:reset }
