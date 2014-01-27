@@ -53,5 +53,9 @@ class LogsManager extends BaseManager
         return $this->getRepository()->createViewLogQuery();
     }
     
+    public function reset()
+    {
+        return $this->getRepository()->reset();
+    }
 
 }

@@ -32,6 +32,8 @@ class DefaultController extends Controller
     
     public function resetAction(Request $request)
     {
+        $this->get('ydle.logger')->reset();
+        
         $this->get('session')->getFlashBag()->add('notice', 'You logs table is now empty');
         return $this->redirect($this->generateUrl('logs'));
     }

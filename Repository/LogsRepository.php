@@ -12,12 +12,26 @@ use Doctrine\ORM\EntityRepository;
  */
 class LogsRepository extends EntityRepository
 {
-    
+    /**
+     * Create a query for the knppaginator
+     * @return type
+     */
     public function createViewLogQuery()
     {
         $query = $this->createQueryBuilder('l')
                     ->addOrderBy('l.created_at', "DESC")  
         ;
         return $query;
+    }
+    
+    /**
+     * Delete all data from the logs table
+     * 
+     * @return integer
+     */
+    public function reset()
+    {
+        $query = $this->getEntityManager()->createQuery('DELETE FROM YdleLogsBundle:Logs');
+        return $query->execute();
     }
 }
