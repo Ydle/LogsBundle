@@ -32,7 +32,7 @@ class DefaultController extends Controller
     
     public function resetAction(Request $request)
     {
-        $this->get('session')->getFlashBag()->add('notice', $message);
+        $this->get('session')->getFlashBag()->add('notice', 'You logs table is now empty');
         return $this->redirect($this->generateUrl('logs'));
     }
 }
