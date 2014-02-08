@@ -12,14 +12,14 @@
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-lg-8 with-border">
-            <h2>Logs</h2>
-            <table id="roomtypes">
+            <h2>{{ "logs.title" | trans({}, "YdleLogsBundle") }}</h2>
+            <table id="logs">
             <thead>
             <tr>
-                <th>Date</th>
-                <th>Type</th>
-                <th>Source</th>
-                <th>Message</th>
+                <th>{{ "logs.list.date" | trans({}, "YdleLogsBundle") }}</th>
+                <th>{{ "logs.list.type" | trans({}, "YdleLogsBundle") }}</th>
+                <th>{{ "logs.list.source" | trans({}, "YdleLogsBundle") }}</th>
+                <th>{{ "logs.list.message" | trans({}, "YdleLogsBundle") }}</th>
             </tr>
             </thead>
             {% if pagination.getTotalItemCount %}
@@ -45,7 +45,7 @@
             {% else %}
             <tbody>
             <tr>
-                <td colspan="4">Aucun log enregistré</td>
+                <td colspan="4">{{ "logs.list.empty" | trans({}, "YdleLogsBundle") }}</td>
             </tr>
             </tbody>
             {% endif %}
@@ -53,10 +53,10 @@
         </div>
         <div class="col-lg-4 content panel panel-default">
           <div class="panel-heading">
-          <h3 class="panel-title">Vos logs</h3>
+          <h3 class="panel-title">{{ "logs.details" | trans({}, "YdleLogsBundle") }}</h3>
           </div>
           <div class="panel-body">
-              <a href="{{ path('resetlogs') }}" class="btn btn-danger" onclick="return confirm('Êtes vous sur de vouloir supprimer tous vos logs ?');">Vider les logs</a>
+              <a href="{{ path('resetlogs') }}" class="btn btn-danger" onclick="return confirm('{{ "logs.delete.confirm" | trans({}, "YdleLogsBundle") }}');">{{ "logs.delete.action" | trans({}, "YdleLogsBundle") }}</a>
           </div>
           <div class="panel-footer">
           </div>
