@@ -1,6 +1,6 @@
 {% extends "YdleIhmBundle::layout.html.twig" %}
 
-{% block title "Ydle - Configuration" %}
+{% block title '{{ "page.logs.title" | trans({}, "YdleLogsBundle") }}' %}
 
 {% block submenu %}
   {{ include('YdleIhmBundle:Config:submenu.html.twig', {
@@ -17,7 +17,7 @@
             <thead>
             <tr>
                 <th>{{ "logs.list.date" | trans({}, "YdleLogsBundle") }}</th>
-                <th>{{ "logs.list.type" | trans({}, "YdleLogsBundle") }}</th>
+                <th>{{ "title.type" | trans({}, "YdleIhmBundle") }}</th>
                 <th>{{ "logs.list.source" | trans({}, "YdleLogsBundle") }}</th>
                 <th>{{ "logs.list.message" | trans({}, "YdleLogsBundle") }}</th>
             </tr>
