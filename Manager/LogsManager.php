@@ -18,7 +18,7 @@
 namespace Ydle\LogsBundle\Manager;
 
 use Doctrine\ORM\EntityManager;
-use Ydle\IhmBundle\Manager\BaseManager;
+use Ydle\HubBundle\Manager\BaseManager;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Ydle\LogsBundle\Entity\Logs;
 use Ydle\LogsBundle\Repository\Logs as LogsRepository;
