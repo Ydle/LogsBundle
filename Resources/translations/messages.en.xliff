@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2014-03-05T15:03:17Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="c1c4c93cca1430f8c6758354b4102e9b0d1428a8" resname="logs.delete.action">
+        <source>logs.delete.action</source>
+        <target state="new">Delete logs</target>
+        <jms:reference-file line="76">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4218d04210b1580ccb673c97e06df7b3121d68f3" resname="logs.delete.confirm">
+        <source>logs.delete.confirm</source>
+        <target state="new">Please confirme log deletion</target>
+        <jms:reference-file line="76">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="823dfca22473f7c35c01d836772697a86b9b753d" resname="logs.details">
+        <source>logs.details</source>
+        <target state="new">logs.details</target>
+        <jms:reference-file line="73">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="61767138b028c54f3aeebeedac71d7c1de930a7f" resname="logs.list.date">
+        <source>logs.list.date</source>
+        <target state="new">logs.list.date</target>
+        <jms:reference-file line="36">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c8d164fbeea4c8972807819aced224479bfb42f9" resname="logs.list.empty">
+        <source>logs.list.empty</source>
+        <target state="new">logs.list.empty</target>
+        <jms:reference-file line="65">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7439e680eb5eedb83eaf400016aa33459219721f" resname="logs.list.message">
+        <source>logs.list.message</source>
+        <target state="new">logs.list.message</target>
+        <jms:reference-file line="39">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a6a763f9e212044997a4cf150ab0a66a2b137936" resname="logs.list.source">
+        <source>logs.list.source</source>
+        <target state="new">logs.list.source</target>
+        <jms:reference-file line="38">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="daa32a4e0c900966af45230b5cd4a8974b01574f" resname="logs.title">
+        <source>logs.title</source>
+        <target state="new">logs.title</target>
+        <jms:reference-file line="32">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="925b6198da201ae1a5210963bb90ac0ca6f83b94" resname="page.logs.title">
+        <source>page.logs.title</source>
+        <target state="new">page.logs.title</target>
+        <jms:reference-file line="20">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="322976406eda4e63b20b5333c21dbcc7020bf1e2" resname="title.type">
+        <source>title.type</source>
+        <target state="new">title.type</target>
+        <jms:reference-file line="37">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

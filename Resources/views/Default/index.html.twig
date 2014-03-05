@@ -17,7 +17,7 @@
 
 {% extends "YdleHubBundle::layout.html.twig" %}
 
-{% block title '{{ "page.logs.title" | trans({}, "YdleLogsBundle") }}' %}
+{% block title "page.logs.title" | trans %}
 
 {% block submenu %}
   {{ include('YdleHubBundle:Config:submenu.html.twig', {
@@ -29,14 +29,14 @@
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-lg-8 with-border">
-            <h2>{{ "logs.title" | trans({}, "YdleLogsBundle") }}</h2>
+            <h2>{{ "logs.title" | trans }}</h2>
             <table id="logs">
             <thead>
             <tr>
-                <th>{{ "logs.list.date" | trans({}, "YdleLogsBundle") }}</th>
-                <th>{{ "title.type" | trans({}, "YdleHubBundle") }}</th>
-                <th>{{ "logs.list.source" | trans({}, "YdleLogsBundle") }}</th>
-                <th>{{ "logs.list.message" | trans({}, "YdleLogsBundle") }}</th>
+                <th>{{ "logs.list.date" | trans }}</th>
+                <th>{{ "title.type" | trans }}</th>
+                <th>{{ "logs.list.source" | trans }}</th>
+                <th>{{ "logs.list.message" | trans }}</th>
             </tr>
             </thead>
             {% if pagination.getTotalItemCount %}
@@ -62,7 +62,7 @@
             {% else %}
             <tbody>
             <tr>
-                <td colspan="4">{{ "logs.list.empty" | trans({}, "YdleLogsBundle") }}</td>
+                <td colspan="4">{{ "logs.list.empty" | trans }}</td>
             </tr>
             </tbody>
             {% endif %}
@@ -70,10 +70,10 @@
         </div>
         <div class="col-lg-4 content panel panel-default">
           <div class="panel-heading">
-          <h3 class="panel-title">{{ "logs.details" | trans({}, "YdleLogsBundle") }}</h3>
+          <h3 class="panel-title">{{ "logs.details" | trans }}</h3>
           </div>
           <div class="panel-body">
-              <a href="{{ path('resetlogs') }}" class="btn btn-danger" onclick="return confirm('{{ "logs.delete.confirm" | trans({}, "YdleLogsBundle") }}');">{{ "logs.delete.action" | trans({}, "YdleLogsBundle") }}</a>
+              <a href="{{ path('resetlogs') }}" class="btn btn-danger" onclick="return confirm('{{ "logs.delete.confirm" | trans }}');">{{ "logs.delete.action" | trans }}</a>
           </div>
           <div class="panel-footer">
           </div>
