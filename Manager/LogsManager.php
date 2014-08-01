@@ -17,30 +17,51 @@
  */
 namespace Ydle\LogsBundle\Manager;
 
-use Doctrine\ORM\EntityManager;
-use Ydle\HubBundle\Manager\BaseManager;
-use Symfony\Bundle\FrameworkBundle\Console\Application;
-use Ydle\LogsBundle\Entity\Logs;
-use Ydle\LogsBundle\Repository\Logs as LogsRepository;
+use Ydle\LogsBundle\Model\LogsManagerInterface;
+use Ydle\CoreBundle\Model\BaseEntityManager;
 
-class LogsManager extends BaseManager
+use Doctrine\ORM\EntityManager;
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+
+use Sonata\DatagridBundle\Pager\Doctrine\Pager;
+use Sonata\DatagridBundle\ProxyQuery\Doctrine\ProxyQuery;
+use Ydle\LogsBundle\Entity\Logs;
+
+class LogsManager extends BaseEntityManager implements LogsManagerInterface
 {
 
-    protected $em;
-
-    public function __construct(EntityManager $em)
+    /**
+    * {@inheritdoc}
+    */
+    public function getPager(array $criteria, $page, $limit = 10, array $sort = array())
     {
-        $this->em = $em;
-    }
+        $parameters = array();
 
-    public function findAllByName()
-    {
-        return $this->getRepository()->findAll();
-    }
+        $query = $this->getRepository()
+            ->createQueryBuilder('l')
+            ->select('l')
+            ->where('1=1');
+        
+        if(!empty($criteria['type']) && $criteria['type'] != "all"){ 
+           $query->andWhere('l.type = :type');
+           $parameters['type'] = $criteria['type'];
+                //->setParameter('type', $criteria['type']);
+        }
+        if(!empty($criteria['source']) && $criteria['source'] != "all"){ 
+           $query->andWhere('l.source = :source');
+           $parameters['source'] = $criteria['source'];
+                //->setParameter('source', $criteria['source']);            
+        }
 
-    public function getRepository()
-    {
-        return $this->em->getRepository('YdleLogsBundle:Logs');
+        $query->setParameters($parameters);
+
+        $pager = new Pager();
+        $pager->setQuery(new ProxyQuery($query));
+        $pager->setMaxPerPage($limit);
+        $pager->setPage($page);
+        $pager->init();
+
+        return $pager;
     }
     
     /**

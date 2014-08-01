@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2014-03-05T15:03:17Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+  <file date="2014-07-30T15:38:37Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
     </header>
     <body>
+      <trans-unit id="0137772bcbc4925ac74147a6bc8cdcf1ef316267" resname="delete.logs.button">
+        <source>delete.logs.button</source>
+        <target state="new">Delete all</target>
+        <jms:reference-file line="46">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b3f38251016106e24a1c844f9b2b894d6adda544" resname="delete.logs.confirm">
+        <source>delete.logs.confirm</source>
+        <target state="new">Are you sure you want to delete all logs ?</target>
+        <jms:reference-file line="46">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="47587bacc9714658440a98a15b4d0a3490736f9a" resname="delete.logs.text">
+        <source>delete.logs.text</source>
+        <target state="new">You can delete all logs by clicking the following link</target>
+        <jms:reference-file line="45">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1805a9dca9ee2b790dc4574934de026ccc66a5b6" resname="delete.logs.title">
+        <source>delete.logs.title</source>
+        <target state="new">Delete all logs</target>
+        <jms:reference-file line="42">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
       <trans-unit id="c1c4c93cca1430f8c6758354b4102e9b0d1428a8" resname="logs.delete.action">
         <source>logs.delete.action</source>
         <target state="new">Delete logs</target>
@@ -49,6 +69,11 @@
       <trans-unit id="925b6198da201ae1a5210963bb90ac0ca6f83b94" resname="page.logs.title">
         <source>page.logs.title</source>
         <target state="new">page.logs.title</target>
+        <jms:reference-file line="20">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0448d20675eceaf84f667da5ce4b68b596161b58" resname="title.logs">
+        <source>title.logs</source>
+        <target state="new">title.logs</target>
         <jms:reference-file line="20">views/Default/index.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="322976406eda4e63b20b5333c21dbcc7020bf1e2" resname="title.type">

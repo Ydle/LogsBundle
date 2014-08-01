@@ -20,6 +20,8 @@ namespace Ydle\LogsBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+use Ydle\LogsBundle\Entity\Logs;
+
 
 class DefaultController extends Controller
 {
@@ -40,8 +42,12 @@ class DefaultController extends Controller
             $this->get('request')->query->get('page', 1)/*page number*/,
             25/*limit per page*/
         );
+        
+        $logs = new Logs();
+        $form = $this->createForm("logsfilter_form", $logs);
         return $this->render('YdleLogsBundle:Default:index.html.twig', array(
-            'pagination' => $pagination
+            'pagination' => $pagination,
+            'form' => $form->createView()
         ));
     }
     

@@ -29,9 +29,10 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Logs
 {
-    const SOURCE_NODES = 'nodes';
+    const SOURCE_NODES  = 'nodes';
+    const SOURCE_API    = 'api';
     const SOURCE_MASTER = 'master';
-    const SOURCE_HUB = 'hub';
+    const SOURCE_HUB    = 'hub';
     
     /**
      * @var integer

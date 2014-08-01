@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="ydle.logs.manager.class">Ydle\LogsBundle\Manager\LogsManager</parameter>
+        <parameter key="ydle.logs.entity.class">Ydle\LogsBundle\Entity\Logs</parameter>
+    </parameters>
+    
+    <services>
+        <service id="ydle.logger" class="%ydle.logs.manager.class%">
+            <argument>%ydle.logs.entity.class%</argument>
+            <argument type="service" id="doctrine" />
+        </service>
+    </services>
+</container>
